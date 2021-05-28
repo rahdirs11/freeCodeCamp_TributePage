@@ -2,6 +2,8 @@
 
 :root {
     --tribute-info-content-width: 500px;
+    --tribute-info-content-width-small: 250px;
+    --tribute-info-content-width-extra-small: 150px;
 }
 
 
@@ -37,35 +39,64 @@ main#main {
     font-size: 45px;
 }
 
+
 #img-div {
+    padding: 10px;
     margin: 15px 0px;
     width: 98%;
     height: 70vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: white;
     justify-content: center;
+    align-items: center;
 }
 
-#img figcaption {
-    font-size: 10px;
+
+#img-div figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#img-div figcaption {
+    font-size: 15px;
+    text-align: center;
+    padding: 10px;
 }
 
 #tribute-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    width: 26%;
 }
 
-#tribute-info > h2 {
+#tribute-info > h3 {
     padding: 20px;
+    margin: 10px;
 }
 
 #tribute-info div {
     margin-top: 30px;
-    width: var(--tribute-info-content-width);
     line-height: 25px;
+}
 
+
+#tribute-info li:hover {
+    animation-name: scale-up;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes scale-up {
+    100% {
+        transform: scale(1.25);
+        list-style-type: none;
+        background-color: rgba(200, 200, 200, 1);
+        border-radius: 20px;
+        padding: 0px 20px;
+        text-align: justify;
+    }
 }
 
 blockquote {
@@ -73,7 +104,6 @@ blockquote {
     padding: 35px 50px 20px 50px;
     font-style: italic;
     font-weight: 400;
-    /* font-size: 20px; */
     letter-spacing: 2px;
 }
 
@@ -92,4 +122,72 @@ blockquote {
 
 .year {
     font-weight: bold;
+}
+
+@media (max-width: 1100px) {
+    #img-div {
+        height: 75%;
+        width: 95%;
+    }
+
+    #img-div img {
+        width: 90%;
+    }
+
+    #img-div figcaption {
+        width: 85%;
+    }
+
+    #tribute-info {
+        width: 80%;
+    }
+
+    #tribute-info > h3 {
+        text-align: center;
+        padding: 5px;
+    }
+
+    #tribute-info div {
+        text-align: justify;
+    }
+
+    @keyframes scale-up {
+        100% {
+            transform: scale(1.1);
+            b
+        }
+    }
+
+    #title {
+        width: 70%;
+        padding: 20px;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+
+    blockquote {
+        width: 80%;
+        padding: 20px 35px 15px 35px;
+        letter-spacing: 0px;
+    }
+
+    footer {
+        width: 70%;
+        text-align: center;
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1350px) {
+    #tribute-info {
+        width: 35%;
+    }
+
+    #title {
+        text-align: center;
+    }
+
+    #tribute-info h3 {
+        text-align: center;
+    }
 }
